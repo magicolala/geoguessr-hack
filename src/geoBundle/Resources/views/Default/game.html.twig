@@ -4,41 +4,21 @@
     <meta charset="utf-8">
     <title>Street View side-by-side</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #pano {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-      }
-      #map{
-        float: right;
-        width:30%;
-        height:40%;
-        position: relative;
-        z-index: 10;
-       }
-	  #pano text {
-		display: none;
-	  }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/game.css') }}"/>
   </head>
   <body>
     <div id="pano"></div>
     <div id="map"></div>
-    <!-- <button class="btn">Valider</button> -->
+    <button class="btn">Valider</button>
+
     <script type="text/javascript" charset="utf-8" async defer>
     function initialize() {
     	var fenway = {lat: {{ ville.lat }}, lng: {{ ville.lon }}};
-    	var chartres = {lat: 48.443854, lng: 1.489012};
+    	var bourges = {lat: 47.083, lng: 2.40};
     	var markers = [];
     	var map = new google.maps.Map(document.getElementById('map'), {
-    	center: chartres,
-    	zoom: 0,
+    	center: bourges,
+    	zoom: 5,
     	mapTypeControl: false,
     	signInControl: false,
     	streetViewControl: false

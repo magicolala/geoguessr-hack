@@ -1,0 +1,27 @@
+.btn {
+    position: absolute;
+    right: 50px;
+    top: 305px;
+    z-index: 15000;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#pano {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+#map{
+  float: right;
+  width:30%;
+  height:40%;
+  position: relative;
+  z-index: 10;
+ }
+#pano text {
+  display: none;
+}
