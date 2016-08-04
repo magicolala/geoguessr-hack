@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Street View side-by-side</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
     <style>
       html, body {
         height: 100%;
@@ -29,6 +30,7 @@
   <body>
     <div id="pano"></div>
     <div id="map"></div>
+    <!-- <button class="btn">Valider</button> -->
     <script type="text/javascript" charset="utf-8" async defer>
     function initialize() {
     	var fenway = {lat: {{ ville.lat }}, lng: {{ ville.lon }}};
@@ -61,7 +63,7 @@
 
     	  function clearMarkers() {
     	    setMapOnAll(null);
-    		markers = [];
+
     	  }
 
     	google.maps.event.addListener(map, 'click', function(event) {
@@ -82,5 +84,6 @@
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4TwMSVgCpcNTOOEqi-jZOjlsHBi_omk&signed_in=true&callback=initialize">
     </script>
+    <script src='{{ asset("js/bootstrap.js") }}'></script>
   </body>
 </html>
