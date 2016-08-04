@@ -12,4 +12,20 @@ use Doctrine\ORM\EntityRepository;
  */
 class VilleRepository extends EntityRepository
 {
+    public function findOneRandom()
+    {
+        $em = $this->getEntityManager();
+        $max = $em->createQuery('
+            SELECT MAX(q.id) FROM geoBundle:Ville q
+            ')
+            ->getSingleScalarResult();
+        return $em->createQuery('
+            SELECT q FROM geoBundle:Ville q
+            WHERE q.id >= :rand
+            ORDER BY q.id ASC
+            ')
+            ->setParameter('rand',rand(0,$max))
+            ->setMaxResults(1)
+            ->getSingleResult();
+    }
 }

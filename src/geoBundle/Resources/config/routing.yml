@@ -5,3 +5,7 @@ ville:
 settr:
     path:     /settr
     defaults: { _controller: geoBundle:Page:settr }
+
+game:
+    path:     /game
+    defaults: { _controller: geoBundle:Page:game }
