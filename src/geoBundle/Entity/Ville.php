@@ -31,14 +31,14 @@ class Ville
     /**
      * @var int
      *
-     * @ORM\Column(name="lat", type="integer", nullable=true)
+     * @ORM\Column(name="lat", type="float", nullable=true)
      */
     private $lat;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="lon", type="integer", nullable=true)
+     * @ORM\Column(name="lon", type="float", nullable=true)
      */
     private $lon;
 
@@ -46,7 +46,7 @@ class Ville
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,7 +69,7 @@ class Ville
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -92,7 +92,7 @@ class Ville
     /**
      * Get lat
      *
-     * @return integer 
+     * @return integer
      */
     public function getLat()
     {
@@ -115,7 +115,7 @@ class Ville
     /**
      * Get lon
      *
-     * @return integer 
+     * @return integer
      */
     public function getLon()
     {

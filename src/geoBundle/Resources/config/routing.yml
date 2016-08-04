@@ -1,3 +1,7 @@
-geo_homepage:
-    path:     /
-    defaults: { _controller: geoBundle:Default:index }
+ville:
+    path:     /ville
+    defaults: { _controller: geoBundle:RegisterVille:register }
+
+settr:
+    path:     /settr
+    defaults: { _controller: geoBundle:Page:settr }
