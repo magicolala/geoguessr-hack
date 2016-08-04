@@ -11,9 +11,10 @@
   <body>
     <div id="pano"></div>
     <div id="map"></div>
-    <form action="" method="get" id="response">
+    <form action="{{ path('gameReponse') }}" method="POST" id="response">
       <input type="hidden" name="position" id="position">
     </form>
+
     <button class="btn">Valider</button>
 
     <script type="text/javascript" charset="utf-8" async defer>
