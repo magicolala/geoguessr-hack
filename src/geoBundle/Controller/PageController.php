@@ -43,15 +43,27 @@ class PageController extends Controller
 
     public function gameReponseAction(Request $request)
     {
-        $reponse = $request->request->get('position');
+        $reponse = $request->request->get('position')
+        $villeLatStr = $request->request->->get('ville_lat');
+        $villeLonStr = $request->request->->get('ville_lng');
 
+        $pattern = '/(\d+\.\d+)/';
+        $test = preg_match_all($pattern, $reponse, $matches);
 
+        $positionLonStr = $matches[0][0];
+        $positionLatStr = $matches[0][1];
+
+        $positionLon = intval($matches[0][0]);
+        $positionLat = intval($matches[0][1]);
+        $villeLat = intval($villeLatStr);
+        $villeLon = intval($villeLonStr);
         $em = $this->getDoctrine()->getManager();
         $ville = $em->getRepository('geoBundle:Ville')->findOneRandom();
 
-        $distance = round(get_distance_m(48.856667, 2.350987, 45.767299, 4.834329) / 1000, 3);
+        $distance = round(get_distance_m($positionLon, $positionLat, $villeLat, $villeLon) / 1000, 3);
         return $this->render('geoBundle:Default:game.html.twig', array(
-            'ville' => $ville
+            'ville' => $ville,
+            'distance' => $distance
         ));
     }
 }
