@@ -11,6 +11,11 @@
   <body>
     <div id="pano"></div>
     <div id="map"></div>
+    <form action="" method="get" id="response">
+      <input type="hidden" name="position" id="position">
+    </form>
+
+    {{ dump(ville) }}
     <button class="btn">Valider</button>
 
     <script type="text/javascript" charset="utf-8" async defer>
@@ -60,10 +65,16 @@
           map: map
         });
         markers.push(marker);
+        console.log(marker.position);
+        $('#position').val(marker.position);
+        console.log($('#position').val());
+        $('#response').submit()
+
       }
     }
 
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4TwMSVgCpcNTOOEqi-jZOjlsHBi_omk&signed_in=true&callback=initialize">
     </script>
