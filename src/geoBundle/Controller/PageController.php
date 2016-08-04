@@ -15,7 +15,7 @@ class PageController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $ville = $em->getRepository('geoBundle:Ville')->findOneRandom();
-
+        
         return $this->render('geoBundle:Default:game.html.twig', array(
             'ville' => $ville
         ));
