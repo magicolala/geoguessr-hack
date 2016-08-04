@@ -33,6 +33,7 @@
     function initialize() {
     	var fenway = {lat: {{ ville.lat }}, lng: {{ ville.lon }}};
     	var chartres = {lat: 48.443854, lng: 1.489012};
+    	var markers = [];
     	var map = new google.maps.Map(document.getElementById('map'), {
     	center: chartres,
     	zoom: 0,
@@ -52,18 +53,31 @@
     		panControl: false,
     		addressControl: false
           });
+    	  function setMapOnAll(map) {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+      }
+    }
+
+    	  function clearMarkers() {
+    	    setMapOnAll(null);
+    		markers = [];
+    	  }
 
     	google.maps.event.addListener(map, 'click', function(event) {
     		placeMarker(event.latLng);
     	});
 
     	function placeMarker(location) {
+    		clearMarkers();
     	    var marker = new google.maps.Marker({
     	        position: location,
     	        map: map
     	    });
+    		markers.push(marker);
     	}
     }
+
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4TwMSVgCpcNTOOEqi-jZOjlsHBi_omk&signed_in=true&callback=initialize">
