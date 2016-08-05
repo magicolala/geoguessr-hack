@@ -1,7 +1,6 @@
 user:
-    resource: "@UserBundle/Controller/"
-    type:     annotation
-    prefix:   /
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   user/
 
 geo:
     resource: "@geoBundle/Resources/config/routing.yml"
