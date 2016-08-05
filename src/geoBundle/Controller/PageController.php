@@ -565,7 +565,7 @@ class PageController extends Controller
         $em->persist($player);
         $em->flush();
 
-        
+
 
 
 
