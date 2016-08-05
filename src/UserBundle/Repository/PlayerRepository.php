@@ -10,4 +10,15 @@ namespace UserBundle\Repository;
  */
 class PlayerRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function ScorePlayer()
+   {
+       $qb = $this->createQueryBuilder('u');
+
+       $qb->select('u.score')
+           ->where('u.username = ?1')
+           ->setParameters(array(1=> 'Player'))
+          ;
+
+       return $qb->getQuery()->getResult();
+   }
 }

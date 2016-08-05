@@ -10,10 +10,58 @@ game:
     path:     /game
     defaults: { _controller: geoBundle:Page:game }
 
+game2:
+    path:     /game2
+    defaults: { _controller: geoBundle:Page:game2 }
+
+game3:
+    path:     /game3
+    defaults: { _controller: geoBundle:Page:game3 }
+
+game4:
+    path:     /game4
+    defaults: { _controller: geoBundle:Page:game4 }
+
+game5:
+    path:     /game5
+    defaults: { _controller: geoBundle:Page:game5 }
+
 gameReponse:
     path:     /game/reponse
     defaults: { _controller: geoBundle:Page:gameReponse }
 
+gameReponse2:
+    path:     /game/reponse2
+    defaults: { _controller: geoBundle:Page:gameReponse2 }
+
+gameReponse3:
+    path:     /game/reponse3
+    defaults: { _controller: geoBundle:Page:gameReponse3 }
+
+gameReponse4:
+    path:     /game/reponse4
+    defaults: { _controller: geoBundle:Page:gameReponse4 }
+
+gameReponse5:
+    path:     /game/reponse5
+    defaults: { _controller: geoBundle:Page:gameReponse5 }
+
 score:
     path:     /score
     defaults: { _controller: geoBundle:Page:score }
+
+score2:
+    path:     /score2
+    defaults: { _controller: geoBundle:Page:score2 }
+
+score3:
+    path:     /score3
+    defaults: { _controller: geoBundle:Page:score3 }
+
+score4:
+    path:     /score4
+    defaults: { _controller: geoBundle:Page:score4 }
+
+score5:
+    path:     /score5
+    defaults: { _controller: geoBundle:Page:score5 }

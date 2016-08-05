@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Street View side-by-side</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/game.css') }}"/>
+  </head>
+  <body>
+    <div id="pano"></div>
+    <div id="map"></div>
+    <form action="{{ path('gameReponse4') }}" method="POST" id="response">
+      <input type="hidden" name="ville_lat" id="ville_lat" value="{{ ville.lat }}">
+      <input type="hidden" name="ville_lng" id="ville_lng" value="{{ ville.lon }}">
+      <input type="hidden" name="position" id="position">
+    </form>
+
+    <button class="btn">Valider</button>
+
+    <script type="text/javascript" charset="utf-8" async defer>
+    function initialize() {
+    	var fenway = {lat: {{ ville.lat }}, lng: {{ ville.lon }}};
+    	var bourges = {lat: 47.083, lng: 2.40};
+    	var markers = [];
+    	var map = new google.maps.Map(document.getElementById('map'), {
+      	center: bourges,
+      	zoom: 5,
+      	mapTypeControl: false,
+      	signInControl: false,
+      	streetViewControl: false
+    	});
+
+    	var panorama = new google.maps.StreetViewPanorama(
+        document.getElementById('pano'), {
+          position: fenway,
+          pov: {
+            heading: 34,
+            pitch: 10
+          },
+      		zoom: 1,
+      		linksControl: true,
+      		panControl: false,
+      		addressControl: false
+        });
+
+      function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+  	  function clearMarkers() {
+        setMapOnAll(null);
+      }
+
+      google.maps.event.addListener(map, 'click', function(event) {
+        placeMarker(event.latLng);
+      });
+
+      function placeMarker(location) {
+        clearMarkers();
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+        markers.push(marker);
+        $('#position').val(marker.position);
+        console.log(marker.position);
+        $('#response').submit();
+
+      }
+    }
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4TwMSVgCpcNTOOEqi-jZOjlsHBi_omk&signed_in=true&callback=initialize">
+    </script>
+  </body>
+</html>
