@@ -5,6 +5,7 @@
     <div id="pano"></div>
     <div id="map"></div>
     <form action="{{ path('gameReponse') }}" method="POST" id="response">
+      <input type="hidden" name="ville" id="ville" value=" {{ ville.name }}">
       <input type="hidden" name="ville_lat" id="ville_lat" value="{{ ville.lat }}">
       <input type="hidden" name="ville_lng" id="ville_lng" value="{{ ville.lon }}">
       <input type="hidden" name="position" id="position">
