@@ -10,7 +10,7 @@ $(document).ready(function(){
 	//////// global endpoints and settings /////////
 	var rounds = new Object();
 	var currentRound = 1;
-	
+
 	var geocoder;
 	var map;
 	var sv = new google.maps.StreetViewService();
@@ -160,7 +160,7 @@ $(document).ready(function(){
 							rounds[2], rounds[3],
 							rounds[4] ]
 			};
-			url = "http://www.geoguessr.com/?s=" + $.base64.encode(JSON.stringify(challenge));
+			url = "http://www.geoguessr.com/retro/?s=" + $.base64.encode(JSON.stringify(challenge));
 			shorturl = $.urlShortener({longUrl:url});
 			prompt("Your custom geoguessr challenge is at: ", shorturl);
 		}
