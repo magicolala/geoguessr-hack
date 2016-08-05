@@ -29,6 +29,30 @@ class RegisterVilleController extends Controller
         $laroche->setLon('-1.4269371032714844');
         $em->persist($laroche);
 
+        $paris = new Ville();
+        $paris->setName('Paris');
+        $paris->setLat('48.723902');
+        $paris->setLon('2.829666');
+        $em->persist($paris);
+
+        $rouen = new Ville();
+        $rouen->setName('Rouen');
+        $rouen->setLat('49.442956');
+        $rouen->setLon('1.094962');
+        $em->persist($rouen);
+
+        $bordeaux = new Ville();
+        $bordeaux->setName('Bordeaux');
+        $bordeaux->setLat('44.021854');
+        $bordeaux->setLon('2.985535');
+        $em->persist($bordeaux);
+
+        $lyon = new Ville();
+        $lyon->setName('Lyon');
+        $lyon->setLat('45.761516');
+        $lyon->setLon('4.835953');
+        $em->persist($lyon);
+
         $em->flush();
 
         return $this->render('geoBundle:Default:index.html.twig');

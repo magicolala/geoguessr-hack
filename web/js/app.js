@@ -10,7 +10,7 @@ $(document).ready(function(){
 	//////// global endpoints and settings /////////
 	var rounds = new Object();
 	var currentRound = 1;
-	
+$.urlShortener.settings.apiKey = "AIzaSyCpDNQx97YSUFuFllgacwewK8KwL6bhZJY";
 	var geocoder;
 	var map;
 	var sv = new google.maps.StreetViewService();
@@ -18,8 +18,8 @@ $(document).ready(function(){
 
 	//////// initialize the map /////////
 	var initMap = function() {
-		var loc = new google.maps.LatLng(40.443322, -79.943583);
-		var mapOptions = { zoom: 7, center: loc, mapTypeId: google.maps.MapTypeId.ROADMAP };
+		var loc = new google.maps.LatLng(45.761516, 4.835953);
+		var mapOptions = { zoom: 2, center: loc, mapTypeId: google.maps.MapTypeId.ROADMAP };
 		map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
 		new google.maps.StreetViewCoverageLayer().setMap(map); // overlay street view coverage
 
@@ -160,7 +160,7 @@ $(document).ready(function(){
 							rounds[2], rounds[3],
 							rounds[4] ]
 			};
-			url = "http://www.geoguessr.com/?s=" + $.base64.encode(JSON.stringify(challenge));
+			url = "http://www.geoguessr.com/retro/?s=" + $.base64.encode(JSON.stringify(challenge));
 			shorturl = $.urlShortener({longUrl:url});
 			prompt("Your custom geoguessr challenge is at: ", shorturl);
 		}
