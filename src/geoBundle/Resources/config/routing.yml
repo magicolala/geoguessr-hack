@@ -13,3 +13,7 @@ game:
 gameReponse:
     path:     /game/reponse
     defaults: { _controller: geoBundle:Page:gameReponse }
+
+score:
+    path:     /score
+    defaults: { _controller: geoBundle:Page:score }

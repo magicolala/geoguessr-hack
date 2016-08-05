@@ -64,10 +64,46 @@ class PageController extends Controller
         $ville = $em->getRepository('geoBundle:Ville')->findOneRandom();
 
         $distance = round(get_distance_m($positionLat, $positionLon, $villeLat, $villeLon) / 1000, 3);
-        var_dump($distance); die;
-        return $this->render('geoBundle:Default:game.html.twig', array(
+
+        // Calculate points awarded via guess proximity
+        function inRange($x, $min, $max) {
+            return ($min <= $x && $x <= $max);
+        };
+
+        if(inRange($distance, 1, 2)) {
+       $points = 10000;
+     } else if(inRange($distance, 3, 10)) {
+       $points = 7000;
+     } else if(inRange($distance, 11, 50)) {
+       $points = 4000;
+     } else if(inRange($distance, 51, 200)) {
+       $points = 3000;
+     } else if(inRange($distance, 201, 500)) {
+       $points = 2000;
+     } else if(inRange($distance, 501, 800)) {
+       $points = 1000;
+     } else if(inRange($distance, 801, 1300)) {
+       $points = 500;
+     } else if(inRange($distance, 1301, 1600)) {
+       $points = 400;
+     } else if(inRange($distance, 1601, 2300)) {
+       $points = 300;
+     } else if(inRange($distance, 2301, 2800)) {
+       $points = 200;
+     } else if(inRange($distance, 2801, 3200)) {
+       $points = 100;
+     } else if(inRange($distance, 3200, 4500)) {
+       $points = 50;
+     } else if(inRange($distance, 4501, 6000)) {
+       $points = 25;
+     } else {
+       $points = 0;
+     };     
+
+        return $this->render('geoBundle:Default:score.html.twig', array(
             'ville' => $ville,
-            'distance' => $distance
+            'distance' => $distance,
+            'score' => $points
         ));
     }
 }
