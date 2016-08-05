@@ -16,12 +16,23 @@ html, body {
   position: absolute;
 }
 #map{
+  position: relative;
   float: right;
   width:30%;
   height:40%;
-  position: relative;
   z-index: 10;
  }
 #pano text {
   display: none;
+}
+
+#counter {
+  position: relative;
+  float: right;
+  background: transparent;
+  color: white;
+  font-size: 3em;
+  width: 20%;
+  height: 20%;
+  z-index: 20;
 }

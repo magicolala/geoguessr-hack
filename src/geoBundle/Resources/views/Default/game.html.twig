@@ -10,8 +10,7 @@
       <input type="hidden" name="ville_lng" id="ville_lng" value="{{ ville.lon }}">
       <input type="hidden" name="position" id="position">
     </form>
-
-    <button class="btn">Valider</button>
+     <div id="counter"></div>
 
     <script type="text/javascript" charset="utf-8" async defer>
     function initialize() {
@@ -66,6 +65,18 @@
 
       }
     }
+
+    // chrono = 60;
+    // function decompte(){
+    //   chrono = chrono-1;
+    //   console.log(chrono);
+    //   if (chrono <= 0) {
+    //     $('#response').submit();
+    //   }else {
+    //     $('#counter').text(chrono);
+    //   }
+    // }
+    setInterval(decompte, 1000);
 
     </script>
 {% endblock %}
