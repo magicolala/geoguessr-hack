@@ -98,7 +98,9 @@ class PageController extends Controller
        $points = 25;
      } else {
        $points = 0;
-     };     
+     };
+
+      
 
         return $this->render('geoBundle:Default:score.html.twig', array(
             'ville' => $ville,
