@@ -41,11 +41,7 @@ class RegisterVilleController extends Controller
         $rouen->setLon('1.094962');
         $em->persist($rouen);
 
-        $bordeaux = new Ville();
-        $bordeaux->setName('Bordeaux');
-        $bordeaux->setLat('44.021854');
-        $bordeaux->setLon('2.985535');
-        $em->persist($bordeaux);
+
 
         $lyon = new Ville();
         $lyon->setName('Lyon');
