@@ -27,13 +27,17 @@ Technologies utilisées:
 ![Résultat final](https://raw.githubusercontent.com/PTony/geoguessr-hack/master/Ressources/screenshots/geoguessr-hack_-_final_result_-_20160907142713.png)
 
 ## Installation:
-composer install
-php app/console doctrine:database:create
-php app/console doctrine:schema:update --force
-sudo chmod.sh
+
+`composer install`
+
+`php app/console doctrine:database:create`
+
+`php app/console doctrine:schema:update --force`
+
+`sudo chmod.sh`
 
 ensuite avec le navigateur, se rendre sur ()[http://localhost/<dossier_d_installation>/web/app.php/ville]
 pour peupler la base avec des exemples
 
-puis sur http://localhost/<dossier_d_installation>/web/app_dev.php/game pour commencer à jouer
+puis sur [](http://localhost/<dossier_d_installation>/web/app_dev.php/game) pour commencer à jouer
 
