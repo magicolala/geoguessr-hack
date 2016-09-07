@@ -36,8 +36,8 @@ Technologies utilisées:
 
 `sudo chmod.sh`
 
-ensuite avec le navigateur, se rendre sur ()[http://localhost/<dossier_d_installation>/web/app.php/ville]
+ensuite avec le navigateur, se rendre sur [http://localhost/<dossier_d_installation>/web/app.php/ville](http://localhost/<dossier_d_installation>/web/app.php/ville)
 pour peupler la base avec des exemples
 
-puis sur [](http://localhost/<dossier_d_installation>/web/app_dev.php/game) pour commencer à jouer
+puis sur [http://localhost/<dossier_d_installation>/web/app_dev.php/game](http://localhost/<dossier_d_installation>/web/app_dev.php/game) pour commencer à jouer
 
